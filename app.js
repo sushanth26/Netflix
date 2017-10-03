@@ -12,7 +12,7 @@ app.listen(4444, function () {
   console.log('Monet UI - Take Home Exercise on port: 4444!');
 });
 
-app.get('/homepage', function (req, res) {
+app.get('/', function (req, res) {
   res.send(readJsonFileSync());
 });
 
