@@ -1,0 +1,7 @@
+{
+  "name": "Netflix",
+  "entry point": "app.js",
+  "dependencies": {
+    "express": "^4.15.4"
+  }
+}
