@@ -8,17 +8,12 @@ function readJsonFileSync() {
   var file = fs.readFileSync('./payload.json', 'utf8');
   return JSON.parse(file);
 }
-
-app.get('/', function (req, res) {
-  res.send(readJsonFileSync());
-});
-
 app.listen(4444, function () {
   console.log('Monet UI - Take Home Exercise on port: 4444!');
 });
 
-app.get('/sushanthData', function (req, res) {
-  res.send({testData: "success"}); 
+app.get('/homepage', function (req, res) {
+  res.send(readJsonFileSync());
 });
 
 app.get('/homepage', function (req, res) {
