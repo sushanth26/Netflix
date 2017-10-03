@@ -12,10 +12,10 @@ app.listen(4444, function () {
   console.log('Monet UI - Take Home Exercise on port: 4444!');
 });
 
-app.get('/', function (req, res) {
-  res.send(readJsonFileSync());
-});
-
 app.get('/homepage', function (req, res) {
   res.sendFile(__dirname + '/server/index.html');
+});
+
+app.get('/getJson', function (req, res) {
+  res.send(readJsonFileSync());
 });
