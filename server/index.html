@@ -8,10 +8,18 @@
 				<option>Movie Id</option>
 				<option>Language code</option>
 			</select>
+
+			<div style="font-size: 1.6em;margin: 10px;">Search</div>
+			<select ng-model="searchCato" style = "width: 200px;  font-size: larger;">
+				<option>Movie Name</option>
+				<option>Language code</option>
+				<option>Image Type</option>
+			</select>
+			<input type="text" style="font-size: large;width: 500px;"></input>
 		</div>
 
 		<div ng-if = "movieId" >
-			<div  ng-repeat="(data, entries) in response | groupBy: 'movieId'">
+			<div style = "display: block; margin: 50px;" ng-repeat="(data, entries) in response | groupBy: 'movieId'">
 				<div style = "display: block; margin: 50px;"> Movie ID : {{data}}</div>
 				<div style = "display: inline;" ng-repeat="movie in entries">
 					<img ng-src="{{movie.thumbnailUrl}}"></img>
@@ -23,7 +31,7 @@
 			<div style = "display: block; margin: 50px;" ng-repeat="(data, entries) in response | groupBy: 'languageCode'">
 				<div style = "display: block; margin: 50px;">Language code : {{data}}</div>
 				<div style = "display: inline;" ng-repeat="movie in entries">
-					<img ng-src="{{movie.thumbnailUrl}}"></img>
+					<img ng-src="{{movie.thumbnailUrl}}" ng-mouseover="{{movie.fullSizeImageUrl}}"></img>
 				</div>
 			</div>
 		</div>

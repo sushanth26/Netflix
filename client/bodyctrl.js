@@ -1,7 +1,9 @@
 var app = angular.module('netflixapp', []);
 app.controller('bodycontroller', function($scope,$http) {
-   	$scope.options = ["Movie Id", "Language code"];
-   	$scope.selectedGroup = $scope.options[0];
+   	$scope.option = ["Movie Id", "Language code"];
+   	$scope.selectedByDefault = $scope.option[0];
+   	$scope.searchCato = ["Movie Name","Language code","Image Type"];
+   	$scope.selectedInSearch = $scope.searchCato[0];
     $http({
 	  method: 'GET',
 	  url: '/getJson'
@@ -21,6 +23,10 @@ app.controller('bodycontroller', function($scope,$http) {
     	$scope.langu = false;
     	$scope.movieId = true;
     }
+  }
+
+  $scope.imgDetails = function(){
+
   }
 });
 
