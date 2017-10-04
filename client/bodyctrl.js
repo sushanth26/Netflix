@@ -7,44 +7,32 @@ app.controller('bodycontroller', function($scope,$http) {
 	  url: '/getJson'
 	}).then(function successCallback(response) {
 	    $scope.response = response.data;
-	    $scope.language = false;
+	    $scope.langu = false;
     	$scope.movieId = true;
-  		//$scope.groups = Object.create(null);
-		// for (var i = 0; i < $scope.response.length; i++) {
-		//     var item = $scope.response[i];
-
-		//     if(!$scope.groups[item.movieId]) {
-		//         $scope.groups[item.movieId] = [];
-		//     }
-
-		//     $scope.groups[item.movieId].push({
-		//         movieName: item.movieName,
-		//         imageType: item.imageType,
-		//         thumbnailUrl: item.thumbnailUrl,
-		//         fullSizeImageUrl: item.fullSizeImageUrl,
-		//         languageCode: item.languageCode
-		//     });
-		// }
-
-		// $scope.result = [];
-
-		// for (var x in $scope.groups) {
-		//     var obj = {};
-		//     obj[x] = $scope.groups[x];
-		//     $scope.result.push(obj);
-		// }
-
 	  }, function errorCallback(response) {
 	  	$scope.response = response.statusText;
 	  });
 
 	$scope.groupBy = function(){
     if($scope.selectedGroup == "Language code"){
-    	$scope.language = true;
+    	$scope.langu = true;
     	$scope.movieId = false;
     }else{
-    	$scope.language = false;
+    	$scope.langu = false;
     	$scope.movieId = true;
     }
   }
+});
+
+app.filter('groupBy', function () {
+    return function (data, key) {
+        if (!(data && key)) return;
+        var result = {};
+        for (var i=0;i<data.length;i++) {
+            if (!result[data[i][key]])
+                result[data[i][key]]=[];
+            result[data[i][key]].push(data[i])
+        }
+        return result;
+    };
 });
