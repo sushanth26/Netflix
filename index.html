@@ -1,0 +1,176 @@
+<html ng-app = "netflixapp">
+	<header>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+	</header>
+	<body style = "background-color: grey;" ng-controller = "bodycontroller">
+		<div style = "display: block; margin: 50px;">
+			<select ng-model="selectedGroup" ng-change="groupBy()" style = "width: 200px;  font-size: larger;">
+				<option>Movie Id</option>
+				<option>Language code</option>
+			</select>
+		</div>
+		
+		<div>{{movieimages}}</div>
+		<div ng-if = "movieId" >
+			<div style = "display: block; margin: 50px;">
+				<div style = "display: inline;" ng-repeat = "items in OINB">
+					<img ng-src="{{items.thumbnailUrl}}">{{item.thumbnailUrl}}</img>
+				</div>
+			</div>
+
+			<div style = "display: block; margin: 50px;">
+				<div style = "display: inline;" ng-repeat = "items in HOC">
+					<img ng-src="{{items.thumbnailUrl}}">{{item.thumbnailUrl}}</img>
+				</div>
+			</div>
+
+			<div style = "display: block; margin: 50px;">
+				<div style = "display: inline;" ng-repeat = "items in MP">
+					<img ng-src="{{items.thumbnailUrl}}">{{item.thumbnailUrl}}</img>
+				</div>
+			</div>
+
+			<div style = "display: block; margin: 50px;">
+				<div style = "display: inline;" ng-repeat = "items in LH">
+					<img ng-src="{{items.thumbnailUrl}}">{{item.thumbnailUrl}}</img>
+				</div>
+			</div>
+
+			<div style = "display: block; margin: 50px;">
+				<div style = "display: inline;" ng-repeat = "items in AD">
+					<img ng-src="{{items.thumbnailUrl}}">{{item.thumbnailUrl}}</img>
+				</div>
+			</div>
+		</div>
+
+		<div ng-if = "language">
+			<div style = "display: block; margin: 50px;">
+				<div style = "display: inline;" ng-repeat = "items in it">
+					<img ng-src="{{items.thumbnailUrl}}">{{item.thumbnailUrl}}</img>
+				</div>
+			</div>
+
+			<div style = "display: block; margin: 50px;">
+				<div style = "display: inline;" ng-repeat = "items in tr">
+					<img ng-src="{{items.thumbnailUrl}}">{{item.thumbnailUrl}}</img>
+				</div>
+			</div>
+
+			<div style = "display: block; margin: 50px;">
+				<div style = "display: inline;" ng-repeat = "items in ja">
+					<img ng-src="{{items.thumbnailUrl}}">{{item.thumbnailUrl}}</img>
+				</div>
+			</div>
+
+			<div style = "display: block; margin: 50px;">
+				<div style = "display: inline;" ng-repeat = "items in de">
+					<img ng-src="{{items.thumbnailUrl}}">{{item.thumbnailUrl}}</img>
+				</div>
+			</div>
+
+			<div style = "display: block; margin: 50px;">
+				<div style = "display: inline;" ng-repeat = "items in da">
+					<img ng-src="{{items.thumbnailUrl}}">{{item.thumbnailUrl}}</img>
+				</div>
+			</div>
+
+			<div style = "display: block; margin: 50px;">
+				<div style = "display: inline;" ng-repeat = "items in pt">
+					<img ng-src="{{items.thumbnailUrl}}">{{item.thumbnailUrl}}</img>
+				</div>
+			</div>
+
+			<div style = "display: block; margin: 50px;">
+				<div style = "display: inline;" ng-repeat = "items in pl">
+					<img ng-src="{{items.thumbnailUrl}}">{{item.thumbnailUrl}}</img>
+				</div>
+			</div>
+
+			<div style = "display: block; margin: 50px;">
+				<div style = "display: inline;" ng-repeat = "items in nb">
+					<img ng-src="{{items.thumbnailUrl}}">{{item.thumbnailUrl}}</img>
+				</div>
+			</div>
+
+			<div style = "display: block; margin: 50px;">
+				<div style = "display: inline;" ng-repeat = "items in ar">
+					<img ng-src="{{items.thumbnailUrl}}">{{item.thumbnailUrl}}</img>
+				</div>
+			</div>
+
+			<div style = "display: block; margin: 50px;">
+				<div style = "display: inline;" ng-repeat = "items in en">
+					<img ng-src="{{items.thumbnailUrl}}">{{item.thumbnailUrl}}</img>
+				</div>
+			</div>
+
+			<div style = "display: block; margin: 50px;">
+				<div style = "display: inline;" ng-repeat = "items in zhHans">
+					<img ng-src="{{items.thumbnailUrl}}">{{item.thumbnailUrl}}</img>
+				</div>
+			</div>
+
+			<div style = "display: block; margin: 50px;">
+				<div style = "display: inline;" ng-repeat = "items in sv">
+					<img ng-src="{{items.thumbnailUrl}}">{{item.thumbnailUrl}}</img>
+				</div>
+			</div>
+
+			<div style = "display: block; margin: 50px;">
+				<div style = "display: inline;" ng-repeat = "items in ptBR">
+					<img ng-src="{{items.thumbnailUrl}}">{{item.thumbnailUrl}}</img>
+				</div>
+			</div>
+
+			<div style = "display: block; margin: 50px;">
+				<div style = "display: inline;" ng-repeat = "items in nl">
+					<img ng-src="{{items.thumbnailUrl}}">{{item.thumbnailUrl}}</img>
+				</div>
+			</div>
+
+			<div style = "display: block; margin: 50px;">
+				<div style = "display: inline;" ng-repeat = "items in es">
+					<img ng-src="{{items.thumbnailUrl}}">{{item.thumbnailUrl}}</img>
+				</div>
+			</div>
+
+			<div style = "display: block; margin: 50px;">
+				<div style = "display: inline;" ng-repeat = "items in fi">
+					<img ng-src="{{items.thumbnailUrl}}">{{item.thumbnailUrl}}</img>
+				</div>
+			</div>
+
+			<div style = "display: block; margin: 50px;">
+				<div style = "display: inline;" ng-repeat = "items in esES">
+					<img ng-src="{{items.thumbnailUrl}}">{{item.thumbnailUrl}}</img>
+				</div>
+			</div>
+
+			<div style = "display: block; margin: 50px;">
+				<div style = "display: inline;" ng-repeat = "items in ko">
+					<img ng-src="{{items.thumbnailUrl}}">{{item.thumbnailUrl}}</img>
+				</div>
+			</div>
+
+			<div style = "display: block; margin: 50px;">
+				<div style = "display: inline;" ng-repeat = "items in zhHant">
+					<img ng-src="{{items.thumbnailUrl}}">{{item.thumbnailUrl}}</img>
+				</div>
+			</div>
+
+			<div style = "display: block; margin: 50px;">
+				<div style = "display: inline;" ng-repeat = "items in fr">
+					<img ng-src="{{items.thumbnailUrl}}">{{item.thumbnailUrl}}</img>
+				</div>
+			</div>
+
+			<div style = "display: block; margin: 50px;">
+				<div style = "display: inline;" ng-repeat = "items in frCA">
+					<img ng-src="{{items.thumbnailUrl}}">{{item.thumbnailUrl}}</img>
+				</div>
+			</div>
+		</div>
+	</body>
+
+	<script type="text/javascript" src = "bodyctrl.js"></script>
+</html>
