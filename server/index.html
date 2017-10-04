@@ -11,7 +11,8 @@
 		</div>
 
 		<div ng-if = "movieId" >
-			<div style = "display: block; margin: 50px;" ng-repeat="(data, entries) in response | groupBy: 'movieId'">
+			<div  ng-repeat="(data, entries) in response | groupBy: 'movieId'">
+				<div style = "display: block; margin: 50px;"> Movie ID : {{data}}</div>
 				<div style = "display: inline;" ng-repeat="movie in entries">
 					<img ng-src="{{movie.thumbnailUrl}}"></img>
 				</div>
@@ -20,6 +21,7 @@
 
 		<div ng-if = "langu" >
 			<div style = "display: block; margin: 50px;" ng-repeat="(data, entries) in response | groupBy: 'languageCode'">
+				<div style = "display: block; margin: 50px;">Language code : {{data}}</div>
 				<div style = "display: inline;" ng-repeat="movie in entries">
 					<img ng-src="{{movie.thumbnailUrl}}"></img>
 				</div>
