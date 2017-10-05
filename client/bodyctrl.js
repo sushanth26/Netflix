@@ -1,9 +1,13 @@
 var app = angular.module('netflixapp', []);
-app.controller('bodycontroller', function($scope,$http) {
+app.controller('bodycontroller', function($scope,$http,$window) {
+	$scope.showdetails = false;
+	$scope.langu = false;
+    $scope.movieId = false;
    	$scope.option = ["Movie Id", "Language code"];
-   	$scope.selectedByDefault = $scope.option[0];
+   	$scope.selectedGrouping = $scope.option[0];
    	$scope.searchCato = ["Movie Name","Language code","Image Type"];
    	$scope.selectedInSearch = $scope.searchCato[0];
+   	document.getElementById("mainBody").style.overflowY = "scroll";
     $http({
 	  method: 'GET',
 	  url: '/getJson'
@@ -12,11 +16,11 @@ app.controller('bodycontroller', function($scope,$http) {
 	    $scope.langu = false;
     	$scope.movieId = true;
 	  }, function errorCallback(response) {
-	  	$scope.response = response.statusText;
+	  	alert(response.statusText);
 	  });
 
 	$scope.groupBy = function(){
-    if($scope.selectedGroup == "Language code"){
+    if($scope.selectedGrouping == "Language code"){
     	$scope.langu = true;
     	$scope.movieId = false;
     }else{
@@ -25,8 +29,14 @@ app.controller('bodycontroller', function($scope,$http) {
     }
   }
 
-  $scope.imgDetails = function(){
-
+  $scope.close = function(item){
+  	$scope.showdetails = false;
+  	document.getElementById("mainBody").style.overflowY = "scroll";
+  }
+  $scope.imgDetails = function(item){
+  	$scope.showdetails = true;
+  		$scope.movieDetails =  item;
+  		document.getElementById("mainBody").style.overflowY = "hidden";
   }
 });
 
