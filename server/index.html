@@ -48,10 +48,12 @@
 		</tr>
 
 		<div ng-if="showdetails">
-			<div style="position: fixed;    right: 0;    padding: 20px;    top: 0;    background-color: rgba(10, 10, 10, 0.56);    left: 0;    bottom: 0;    text-align: center;">
+			<div style="position: fixed;    right: 0;    padding: 20px;    top: 0;    background-color: rgba(10, 10, 10, 0.56);    left: 0;    bottom: 0;">
 				<button ng-click = "close()" style="font-size: larger;z-index: 9999;    float: right;">close</button>
-				<div style="    position: absolute;    top: 150px;    bottom: 0;    left: 0;    right: 0;">
-					<img ng-src="{{movieDetails.fullSizeImageUrl}}"></img>
+				<div>
+					<div <div style="    text-align: right;padding: 110px;">
+						<img ng-src="{{movieDetails.fullSizeImageUrl}}"></img>
+					</div>
 					<div style="background: rgba(16, 16, 16, 0);    font-size: 1.2em;    font-family: sans-serif;    font-weight: bold;    color: rgb(242, 109, 4);    width: max-content;
     position: absolute;    top: 200px;    margin-left: 50px;    text-align: left; "> 
 						<h3>Movie Details<h3>
